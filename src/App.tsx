@@ -1,35 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
+import {Onoff} from "./components/OnOf/Onoff";
+import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/Rating/UncontolledRating/UncontrolledRating";
+
 
 function App() {
+    let [accordionTitle, setAccordionTitle] = useState<boolean>(false)
     return (
         <div className="App">
-            <Accordion/>
-            <Rating/>
+            {/*<Onoff/>*/}
+            {/*<br/>*/}
+            {/*<UncontrolledAccordion title={"Hehei"} />*/}
+            <UncontrolledRating/>
+
         </div>
     );
 }
 
-const Rating = () => {
-    return (<div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-            <div>star</div>
-        </div>
-    )
-}
-const Accordion = () => {
-    return (<div>
-            <h3>Menu</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
-    )
-}
 
 export default App;
