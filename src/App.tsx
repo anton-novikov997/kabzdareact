@@ -1,22 +1,25 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Onoff} from "./components/OnOf/Onoff";
-import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion/UncontrolledAccordion";
-import {UncontrolledRating} from "./components/Rating/UncontolledRating/UncontrolledRating";
-
+import {OnOff} from "./OnOff/OnOff";
+import {Rating} from "./components/Rating/Rating";
+import {Accordion} from "./components/Accordion/Accordion";
 
 function App() {
-    let [accordionTitle, setAccordionTitle] = useState<boolean>(false)
+    const [ratingNumber, setRatingNumber] = useState<number>(0)
+   const [onOff,setOnOff]=useState(true)
+    const [collapsed,setCollapsed]=useState(false)
     return (
-        <div className="App">
-            {/*<Onoff/>*/}
-            {/*<br/>*/}
-            {/*<UncontrolledAccordion title={"Hehei"} />*/}
-            <UncontrolledRating/>
-
+        <div>
+            Это есть компонента App
+            <div>
+                <Rating value={ratingNumber} onChange={setRatingNumber}/>
+                <Accordion title={"Menu"} onclick={setCollapsed } collapsed={collapsed}/>
+                {/*<UncontolldeAccordion title={"Menu"} collapsed={true}/>*/}
+                {/*<UncontolldeAccordion title={"User"} collapsed={false}/>*/}
+                <OnOff  value={onOff} onClick={setOnOff}/>
+            </div>
         </div>
     );
 }
-
 
 export default App;
